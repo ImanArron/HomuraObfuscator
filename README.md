@@ -8,6 +8,33 @@ order: 0
 
 `HomuraObfuscator` 是用于对 `OC/C/C++` 的类名、方法名进行混淆的工具。
 
+# 环境依赖
+
+## 安装 `llvm`
+
+```shell
+brew install --build-from-source llvm
+```
+
+安装过程中可能需要科学上网，若出现 Failed to connect to raw.githubusercontent.com port 443: Connection refused 问题，可以先到 [https://www.ipaddress.com/](https://www.ipaddress.com/) 查询 raw.githubusercontent.com 对应的 ip，然后修改 hosts 文件，如，可在 hosts 文件中添加
+
+```
+199.232.96.133 raw.githubusercontent.com
+```
+
+`llvm` 安装成功之后，`cd` 到 `HomuraObfuscator` 目录，执行如下命令：
+
+```shell
+sudo swift utils/make-pkgconfig.swift
+```
+
+配置环境变量，打开 `~/.bash_profile` 文件，添加 `llvm` 路径：
+
+```
+# llvm
+export PATH="/usr/local/opt/llvm/bin:${PATH}"
+```
+
 # 使用说明
 
 ## 使用方法
